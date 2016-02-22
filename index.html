@@ -1,0 +1,67 @@
+<html ng-app="hovermole">
+<head>
+    <meta charset="UTF-8">
+    <title>Hover like a mole on </title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="GameController">
+ 
+ {{1 + 1}}
+ {{test}}
+ 
+ <div class="grassfield">
+     <div class="burrow" ng-repeat="burrow in burrows" ng-click="peekaboo(burrow)">
+         <img ng-show="burrow.show" src="{{burrow.source}}" alt="{{burrow.occupant}}" height="50">
+     </div>
+     <p>Total Score = {{points}}</p>
+ </div>
+ 
+     <audio id="winner" src="/assets/sounds/win.mp3" type="audio/mp3"></audio>
+ <div ng-if="victory">
+     <div class="alert alert-success">
+         A Winner is You!
+     </div>
+ </div>
+ <div ng-if="defeat">
+     <div class="alert alert-danger">
+         HAHA YOU SUCK
+     </div>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!--Load Angular-->
+ <script src="bower_components/angular/angular.js"></script>
+ <!--Load jQuery-->
+ <script src="bower_components/jquery/dist/jquery.js"></script>
+ <!--Bootstrap-->
+ <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+ <!--Load app-->
+ <script src="app/init.js"></script>
+ <script src="app/components/game-controller.js"></script>
+</body>
+</html>
