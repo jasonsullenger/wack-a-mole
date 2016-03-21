@@ -1,50 +1,36 @@
 app.controller('GameController', function ($scope, $timeout) {
     $scope.points = 0;
+    $scope.timer = 60;
 
-    $scope.burrows = [{ id: 1, occupied: false }, { id: 2, occupied: false }, { id: 3, occupied: true, occupant: "Mole", source: '/assets/img/Monty_Mole.png' }, { id: 4, occupied: true, occupant: "Mole", source: '/assets/img/Monty_Mole.png' }, { id: 5, occupied: true, occupant: "Charlie Sheen", source: '/assets/img/charlie.png' }, { id: 6, occupied: true, occupant: "Badger", source: '/assets/img/HONEY_BADGER.png' }];
+    $scope.burrows = [{ id: 1, occupied: false, source: '/assets/img/empty.png' }, { id: 2, occupied: false, source: '/assets/img/empty.png' }, { id: 3, occupied: false, source: '/assets/img/empty.png' }, { id: 4, occupied: false, source: '/assets/img/empty.png' }, { id: 5, occupied: false , source: '/assets/img/empty.png'}, { id: 6, occupied: false, source: '/assets/img/empty.png' }, { id: 7, occupied: false, source: '/assets/img/empty.png' }, { id: 8, occupied: false, source: '/assets/img/empty.png' }, { id: 9, occupied: true, occupant: "Mole", source: '/assets/img/mole.png' }];
 
     $scope.peekaboo = function (burrow) {
-        if (!burrow.occupied) {
-            return
-        }
-        burrow.show = true;
+       
         if (burrow.occupant === "Mole") {
-            $scope.points += 5;
-        } else if (burrow.occupant === "Badger") {
-            $scope.points--;
+            $scope.points += 100;
         } else {
-            $scope.points -= 5;
+           return;
         }
 
-        victory();
+        // victory();
 
         $timeout(function () {
             burrow.show = false;
             shuffle();
         }, 1000);
 
-
-
     }
-
+// Fisher-Yates Shuffle
     function shuffle() {
-
         var m = $scope.burrows.length
         var t;
         var i;
-
-        // While there remain elements to shuffle…
         while (m) {
-
-            // Pick a remaining element…
             i = Math.floor(Math.random() * m--);
-
-            // And swap it with the current element.
             t = $scope.burrows[m];
             $scope.burrows[m] = $scope.burrows[i];
             $scope.burrows[i] = t;
         }
-
     };
 
     function victory() {
