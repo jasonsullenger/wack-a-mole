@@ -10,11 +10,15 @@
      <h2>Total Score = {{points}}</h2>
      <h2>Timer = {{timer}}</h2>
  
- <div class="grassfield col-sm-offset-4 col-sm-6">
+ <button type="button" class="btn btn-md" ng-click="refresh()">Start</button>
+ 
+ 
+ <div class="board col-sm-offset-4 col-sm-5">
      <div class="burrow col-sm-4" ng-repeat="burrow in burrows" ng-click="peekaboo(burrow)">
         <img src="{{burrow.source}}" alt="{{burrow.occupant}}" height="150">
      </div>
  </div>
+     
              
  
      <audio id="winner" src="#" type="audio/mp3"></audio>
