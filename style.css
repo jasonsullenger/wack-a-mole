@@ -13,3 +13,8 @@
 img{
     border-radius: 25px;
 }
+.scoreboard{
+    background-color: chartreuse;
+    border-radius: 25px;
+    text-align: center;
+}
