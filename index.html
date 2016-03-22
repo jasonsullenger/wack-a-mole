@@ -6,14 +6,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body ng-controller="GameController">
-
-<div class="scoreboard col-sm-offset-2 col-sm-5">
-    <h2>Total Score = {{points}}</h2>
     
-    <h2>Timer = {{timer}}</h2>
+<div class="view">
+    <div class="scoreboard col-xs-12 col-sm-2">
+        <h4>Total Score = {{points}}</h4>
+   
+        <h4>Timer = {{timer}}</h4>
     
     <button type="button" class="btn btn-md btn-default" ng-click="refresh()">Start</button>
-    
+    <br>
     <div class="btn-group" role="group" aria-label="...">
         <button type="button" class="btn btn-md btn-default" ng-click="difficulty('Easy')">Easy</button>
         <button type="button" class="btn btn-md btn-default" ng-click="difficulty('Normal')">Hard</button>
@@ -21,20 +22,19 @@
     </div>  
 </div>
  
- <div class="board col-sm-offset-2 col-sm-5">
-     <div class="burrow col-sm-4" ng-repeat="burrow in burrows" ng-click="!IsClickEnable||peekaboo(burrow)">
+ <div class="board col-xs-12 col-xs-5">
+     <div class="winPage" ng-show="victory">
+        <h2 id="score">{{points}} points</h2>
+     </div>
+     <div ng-hide="victory" ng-class="class" class="burrow col-sm-4" ng-repeat="burrow in burrows" ng-click="peekaboo(burrow)">
         <img src="{{burrow.source}}" alt="{{burrow.occupant}}" height="150">
      </div>
  </div>
-     
+</div>     
              
  
-     <audio id="winner" src="#" type="audio/mp3"></audio>
- <div ng-if="victory">
-     <div class="alert alert-success">
-         A Winner is You!
-     </div>
- </div>
+     <!--<audio id="winner" src="#" type="audio/mp3"></audio>-->
+ 
  
  <!--Load Angular-->
  <script src="bower_components/angular/angular.js"></script>
