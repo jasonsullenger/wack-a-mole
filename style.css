@@ -1,12 +1,9 @@
-body{
-    margin-top: 50px;
-    background: paleturquoise;
-}
 .burrow{
     height: 150px;
     width: 150px;;
     margin: 5px;
     padding: 0px;
+    border: 1px solid black
 }
 .board{
     background-color: darkgreen;
@@ -16,17 +13,21 @@ body{
     padding-top: 15px;
     height: 513px;
     width: 600px;
+    margin-top: 5%;
 }
 img{
     border-radius: 5px;
 }
 .scoreboard{
-    background-color: chartreuse;
+    background-color: #d8a321;
     border-radius: 25px;
     text-align: center;
     border: 1px solid black;
     height: 513px;
+    width: 240px;
     padding-top: 50px;
+    margin-left: 7.5%;
+    margin-top: 5%;
 }
 .winPage{
     background-image: url("/assets/img/winner.png");
@@ -44,13 +45,20 @@ img{
     pointer-events: none;
 }
 .view{
-    width: 1500px;
-    margin-left: 25%;
+    width: 1000px;
+    height: 750px;
+    margin: 5%;
+    vertical-align: middle;
+    background: #8B4700;
+    border-radius: 10px;
 }
 .title{
-    margin-left: 25%;
+    margin-left: 40%;
+    padding-top: 10px;
+    color: cornsilk;
 }
 button{
     margin-top:15px;
-    margin-bottom: 15px
+    margin-bottom: 15px;
+    border: 1px solid #8B4700!important;
 }
