@@ -30,7 +30,7 @@ img{
     margin-top: 5%;
 }
 .winPage{
-    background-image: url("/assets/img/winner.png");
+    background-image: url("assets/img/winner.png");
     height: 500px;
     width: 480px;
     background-size: contain;
