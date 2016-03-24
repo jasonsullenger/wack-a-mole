@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Whack-A-Mole</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body ng-controller="GameController">
-
+    <!--Total View-->
     <div class="view">
+        <!--Game Title-->
         <div class="title">
             <h1>Whack-a-Mole</h1>
         </div>
+        <!--Buttons timer and scoreboard-->
         <div class="scoreboard col-xs-12 col-sm-2">
             <h3>Total Score = {{points}}</h3>
 
@@ -28,7 +33,7 @@
                 <button type="button" class="btn btn-md btn-default" ng-click="difficulty('Extreme')">Extreme</button>
             </div>
         </div>
-
+        <!--Active game board-->
         <div class="board col-xs-12 col-xs-5">
             <div class="winPage" ng-show="victory">
                 <h2 id="score">{{points}} points</h2>
@@ -38,17 +43,16 @@
             </div>
         </div>
     </div>
-
+    <!--Audio Snippets-->
     <audio id="winner" src="/assets/sounds/moleEnd.mp3" type="audio/mp3"></audio>
     <audio id="strike" src="/assets/sounds/moleHit.mp3" type="audio/mp3"></audio>
     <audio id="miss" src="/assets/sounds/moleMiss.mp3" type="audio/mp3"></audio>
 
-    <!--Load Angular-->
-    <script src="bower_components/angular/angular.js"></script>
-    <!--Load jQuery-->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <!--Bootstrap-->
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!--Load jQuery Angular Bootstrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
     <!--Load app-->
     <script src="app/init.js"></script>
     <script src="app/components/game-controller.js"></script>
