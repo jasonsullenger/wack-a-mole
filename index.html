@@ -8,12 +8,17 @@
 <body ng-controller="GameController">
     
 <div class="view">
+    <div class="title">
+        <h1>Whack-a-Mole</h1>
+    </div>
     <div class="scoreboard col-xs-12 col-sm-2">
-        <h4>Total Score = {{points}}</h4>
+        <h3>Total Score = {{points}}</h3>
    
-        <h4>Timer = {{timer}}</h4>
+        <h3>Timer = {{timer}}</h3>
     
-    <button type="button" class="btn btn-md btn-default" ng-click="refresh()">Start</button>
+    <button type="button" class="btn btn-md btn-default" ng-disabled="startDisable" ng-click="start()">Start</button>
+    <br>
+    <button type="button" class="btn btn-md btn-default" ng-click="reset()">Reset</button>
     <br>
     <div class="btn-group" role="group" aria-label="...">
         <button type="button" class="btn btn-md btn-default" ng-click="difficulty('Easy')">Easy</button>
@@ -26,15 +31,15 @@
      <div class="winPage" ng-show="victory">
         <h2 id="score">{{points}} points</h2>
      </div>
-     <div ng-hide="victory" ng-class="class" class="burrow col-sm-4" ng-repeat="burrow in burrows" ng-click="peekaboo(burrow)">
+     <div ng-hide="victory" class="burrow col-sm-4" ng-repeat="burrow in burrows" ng-click="peekaboo(burrow)">
         <img src="{{burrow.source}}" alt="{{burrow.occupant}}" height="150">
      </div>
  </div>
 </div>     
              
- 
-     <!--<audio id="winner" src="#" type="audio/mp3"></audio>-->
- 
+ <audio id="winner" src="/assets/sounds/moleEnd.mp3" type="audio/mp3"></audio>
+ <audio id="strike" src="/assets/sounds/moleHit.mp3" type="audio/mp3"></audio>
+ <audio id="miss" src="/assets/sounds/moleMiss.mp3" type="audio/mp3"></audio>
  
  <!--Load Angular-->
  <script src="bower_components/angular/angular.js"></script>

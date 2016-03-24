@@ -1,12 +1,13 @@
 body{
     margin-top: 50px;
+    background: paleturquoise;
 }
 .burrow{
     height: 150px;
     width: 150px;;
     margin: 5px;
     padding: 0px;
-    border-radius: 15px;
+    /*border-radius: 5px;*/
 }
 .board{
     background-color: darkgreen;
@@ -18,7 +19,7 @@ body{
     width: 600px;
 }
 img{
-    border-radius: 25px;
+    border-radius: 5px;
 }
 .scoreboard{
     background-color: chartreuse;
@@ -35,13 +36,22 @@ img{
     background-size: contain;
     background-repeat: no-repeat;
     text-align: center;
+    margin-top:70px;
 }
 #score{
-    padding-top: 175px;
+    padding-top: 150px;
 }
 .pointerEvent{
     pointer-events: none;
 }
 .view{
-    margin-left: 150px;
+    width: 1500px;
+    margin-left: 25%;
+}
+.title{
+    margin-left: 25%;
+}
+button{
+    margin-top:15px;
+    margin-bottom: 15px
 }
