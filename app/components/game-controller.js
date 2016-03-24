@@ -22,12 +22,10 @@ app.controller('GameController', function($scope, $timeout) {
 
     // Prevents double clicking mole
     $scope.pointerEvent = function() {
-        if ($scope.class === "pointerEvent"){
+        if ($scope.class === "pointerEvent") {
             $scope.class = "enabled";
         }
     };
-            
-            
 
     // Game start
     $scope.start = function() {
@@ -55,7 +53,7 @@ app.controller('GameController', function($scope, $timeout) {
                 shuffle();
                 refresh();
             }, diffy);
-        } else if($scope.timer < 1){
+        } else if ($scope.timer < 1) {
             victory();
         }
     }
@@ -94,7 +92,7 @@ app.controller('GameController', function($scope, $timeout) {
             $scope.burrows[i] = t;
         }
     };
- 
+
     // Check Victory
     function victory() {
         $scope.victory = true;
